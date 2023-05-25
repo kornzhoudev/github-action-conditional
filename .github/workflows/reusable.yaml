@@ -9,8 +9,8 @@ on:
         type: string
     outputs:
       result:
-        description: The result of the deploy operation
-        values: ${{ jobs.deploy.outputs.outcome }}
+        description: The result of the deployment operation
+        value: ${{ jobs.deploy.outputs.outcome }}
     # secrets:
     #   some-secret:
     #     required: false
@@ -30,4 +30,4 @@ jobs:
         run: echo "Deploying & uploading..."
       - name: Set result output
         id: set-result
-        run: echo "step-result={success}" >> $GITHUB_OUTPUT"
+        run: echo "step-result=success" >> $GITHUB_OUTPUT
